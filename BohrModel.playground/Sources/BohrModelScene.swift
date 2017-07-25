@@ -77,6 +77,7 @@ public class BohrModelScene: SKScene {
              print("  Circumference = \(circumference)")
              print("  Electron Spin Duration = \(spinDuration)")
              } */
+            // FIXME: This spin duration isn't working right...
             let spinDuration = Double(10) + Double(electronNumber)
             
             for currentElectronNumber in 1 ... electronNumber {

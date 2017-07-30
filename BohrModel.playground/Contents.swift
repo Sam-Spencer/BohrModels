@@ -12,11 +12,12 @@ import SpriteKit
 let sceneView = SKView(frame: CGRect(x:0 , y:0, width: 640, height: 700))
 sceneView.ignoresSiblingOrder = true
 sceneView.backgroundColor = .clear
+sceneView.showsFPS = true
 
 // Create the Bohr Model scene
 let scene = BohrModelScene(size: sceneView.bounds.size)
 scene.name = "BohrModelScene"
-scene.atomicNumberForModel = 118
+scene.atomicNumberForModel = 50
 
 scene.verboseLogging = false
 scene.scaleMode = .aspectFill

@@ -67,19 +67,6 @@ public class BohrModelScene: SKScene {
             // Calculate the correct spacing for the electrons in the current orbit
             let theta = ((Double.pi * 2) / Double(electronNumber))
             
-            // Designate the appropriate spin duration by solving for our unknown: speed
-            // Our taget rotation duration is always 2.0 seconds
-            // And, we know the circumference of the orbital
-            // Thus, we can calculate for the factor to supply
-            /* let circumference = Double.pi * shellRadius * 2 // 2πr
-             let spinDuration = sqrt(circumference / 5)
-             if verboseLogging == true {
-             print("  Circumference = \(circumference)")
-             print("  Electron Spin Duration = \(spinDuration)")
-             } */
-            // FIXME: This spin duration isn't working right...
-            let spinDuration = Double(10) + Double(electronNumber)
-            
             for currentElectronNumber in 1 ... electronNumber {
                 if verboseLogging == true {
                     print("  Electron #\(currentElectronNumber)")
@@ -97,11 +84,14 @@ public class BohrModelScene: SKScene {
                 electronNode.position = CGPoint.init(x: cos(angle) * shellRadius, y: sin(angle) * shellRadius)
                 
                 orbitalNode.addChild(electronNode)
-                orbitalNode.run(SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(Double.pi), duration: spinDuration)))
             }
             
             shellNumber += 1
         }
+        
+        // Designate the appropriate spin duration
+        let spinDuration = Double(10)
+        protonNode.run(SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(Double.pi), duration: spinDuration)))
         
         return protonNode
     }

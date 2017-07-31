@@ -12,3 +12,6 @@ Eventually, I would like to write an algorithm that calculates (at run-time) the
 Nuclei should be drawn with the correct atomic symbol.
 
 The models should be interactive (more than just play / pause functionality); so one can move, tap, zoom, and interact with them. Additionally, it may be worthwhile to color-code electrons or their energy levels.
+
+### How to Use it
+This project is currently provided as an Xcode Playground. You can open it up in Xcode on your Mac, or open it on your iPad. A Playground Book may be available in the future.
